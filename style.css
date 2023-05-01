@@ -21,11 +21,12 @@ h1 {
   justify-content: center;
   align-items: center;
   color:rgb(216, 216, 216);
-  font-weight: 400;
+  font-weight:300;
   font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
   border-radius: 0.4rem; 
   border: 2px solid rgb(121, 123, 122);
-  background-color: black;
+  background-color: rgb(19, 19, 19);
   transition: background-color 0.2s rotate 1s;
   text-align: center;
   font-family:'Courier New', Courier, monospace;
@@ -40,7 +41,7 @@ h1 {
 }
 
 .key-another-color {
-  background-color: rgb(37, 37, 37);
+  background-color: rgb(46, 46, 46);
 }
 
 .key-animation {
@@ -52,7 +53,8 @@ h1 {
   background-color: rgba(0, 0, 0, 0.404) ;
   padding: 1.5rem;
   border-radius: 2.4rem;
-
+  min-height: 30rem;
+  min-width: 40rem;
 }
 
 .field__container{
@@ -107,5 +109,9 @@ textarea {
   margin-left: 65rem;
   width: 4rem;
   height: 4rem;
-  background-image: url('/bristish.png');
+}
+
+
+.red {
+  background-color: brown !important;
 }

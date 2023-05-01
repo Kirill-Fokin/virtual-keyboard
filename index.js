@@ -5,18 +5,18 @@ let layout = ["`","1","2","3","4","5","6","7","8","9","0","-", "=", "Backspace",
 			      "Ctrl","Win","ALT"," ","Left","Down","Right"];
 
 let Rus_layout = ["`","1","2","3","4","5","6","7","8","9","0","-","=","Backspace",
-                 "Tab","й","ц","у","к","е","н","г","ш","щ","з","х","ъ","[","]","","DEL",
-                 "CapsLock","ф","ы","в","а","п","р","о","л","д","ж","э",";","'","ENTER",
-                 "Shift","~","я","ч","с","м","и","т","ь","б","ю",".",",","/","Up","Shift",
-                 "Ctrl","Win","ALT"," ","Left","Down","Right"];
-
-let anotherColorKeys = ["`","DEL","Backspace", "Win","ALT", "Up", "Down", "Left", "Right", "Caps Lock", "ENTER",   "Ctrl", "Tab", "Shift", " "]
-
+"Tab","й","ц","у","к","е","н","г","ш","щ","з","х","ъ","[","]","","DEL",
+"CapsLock","ф","ы","в","а","п","р","о","л","д","ж","э",";","'","ENTER",
+"Shift","~","я","ч","с","м","и","т","ь","б","ю",".",",","/","Up","Shift",
+"Ctrl","Win","ALT"," ","Left","Down","Right"];
+      
 let bigKeys = ["Backspace", "Caps Lock", "Enter", "Cntrl", "Tab", "Shift",]
+
+let anotherColorKeys = ["`","DEL","Backspace", "Win","ALT", "Up", "Down", "Left", "Right", "Caps Lock", "ENTER", "Ctrl", "Tab", "Shift", " "]
+
 
 const body = document.querySelector('body')
 
-//h1
 let mainTitle = document.createElement('h1');
 mainTitle.textContent = 'RSS Виртуальная клавиатура'
 body.appendChild(mainTitle)
@@ -26,10 +26,10 @@ let fieldContainer = document.createElement('div');
 fieldContainer.classList.add('field__container')
 body.appendChild(fieldContainer)
 
-//languageIcon
+
 let languageIcon = document.createElement('img');
 languageIcon.classList.add('language')
-languageIcon.src = "/bristish.png"
+languageIcon.src = "assets/bristish.png"
 body.appendChild(languageIcon)
 
 // язык layout
@@ -40,13 +40,12 @@ let textArea = document.createElement('textarea');
 textArea.classList.add('keyboard__area')
 fieldContainer.appendChild(textArea);
 
-//container for keyboard
 let keyboardContainer =   document.createElement('div');
 keyboardContainer.classList.add('keyboard-container');
 fieldContainer.appendChild(keyboardContainer)
 
 //line creation
-function createLIne () {
+function createLine () {
   for (let i = 0; i < 5; i++) {
     let keyboardLine = document.createElement('div');
     keyboardLine.classList.add('keyboard-line')
@@ -54,9 +53,7 @@ function createLIne () {
   }
 }
 
-createLIne ()
-
-
+createLine ()
 
 //advice-block
 let adviceBlock =   document.createElement('div');
@@ -68,42 +65,39 @@ adviceBlock2.classList.add('advice')
 adviceBlock2.textContent = 'клавитура сделана на MacOS'
 fieldContainer.appendChild(adviceBlock2);
 
-const keyboardLines  = document.querySelectorAll(".keyboard-line")
-//all keys 
+let keyboardLines  = document.querySelectorAll(".keyboard-line")
+//key creation
 
 
-function initKeys (start , end , line) {
-  let curArray = (layoutLanguage == 'ENG') ? layout : Rus_layout;
-  for (let i = start; i < end; i++) {
-    let newKey = document.createElement('div');
-    newKey.classList.add('key')
-     if ( bigKeys.includes(curArray[i]) ) {
-      newKey.classList.add('key-big') 
-     }
-     if (layout[i] === ' ' ) {
-      newKey.classList.add('key-big2') 
-     }
-     if ( anotherColorKeys.includes(curArray[i]) ) {
-      newKey.classList.add('key-another-color') 
-     }
-     newKey.textContent =`${curArray[i]}`;
-     keyboardLines[line].appendChild(newKey)
+  function initKeys (start , end , line) {
+    let curArray = (layoutLanguage == 'ENG') ? layout : Rus_layout;
+    for (let i = start; i < end; i++) {
+      let newKey = document.createElement('div');
+      newKey.classList.add('key')
+       if ( bigKeys.includes(curArray[i]) ) {
+        newKey.classList.add('key-big') 
+       }
+       if (layout[i] === ' ' ) {
+        newKey.classList.add('key-big2') 
+       }
+       if ( anotherColorKeys.includes(curArray[i]) ) {
+        newKey.classList.add('key-another-color') 
+       }
+       newKey.textContent =`${curArray[i]}`;
+       keyboardLines[line].appendChild(newKey)
+    }
   }
-}
- 
+   
 
- //инициализация клавиатуры
+   //инициализация клавиатуры
 initKeys (0,14 , 0)
 initKeys (14,29 , 1)
 initKeys (29,42, 2)
 initKeys (42,56 , 3)
 initKeys (56, 63, 4)
 
+let keyboardLine  = document.querySelector('.keyboard-line')
 
-let keyboardLine  = document.querySelector('.keyboard-line');
-
-
-//keyboard highlight
 fieldContainer.addEventListener('click', function getGray(e) {
   if (e.target.classList.contains('key')) {
     let target = e.target
@@ -118,8 +112,8 @@ fieldContainer.addEventListener('click', function getGray(e) {
     target.style.backgroundColor = "rgb(19, 19, 19)";
     target.classList.remove('key-animation')
     }, 300 )
-   if (target.textContent === 'Backspace') {
-    textArea.textContent = (textArea.textContent).slice(0, -1)
+   if (target.textContent == 'Backspace') {
+    textArea.textContent =  (textArea.textContent).slice(0, -1)
    } else {
     
     textArea.textContent += target.textContent
@@ -128,12 +122,20 @@ fieldContainer.addEventListener('click', function getGray(e) {
 }
 )
 
-// определяем название кликнутой клавиши 
+
+
+
+
+
+
 fieldContainer.addEventListener('click', function getName(e) {
   if (e.target.classList.contains('key')) {
     console.log(e.target.textContent)
   }  
 })
+
+
+
 
 //запись в текстареа, того, что набрано клавишами
 document.addEventListener('keydown', function getKek(e) {
@@ -147,6 +149,10 @@ document.addEventListener('keydown', function getKek(e) {
     setTimeout(() => {
       el.style.backgroundColor = 'black';
     }, 400)
+   
+
+
+
    }
   })
  
@@ -154,8 +160,11 @@ document.addEventListener('keydown', function getKek(e) {
 
 
 
+
+
 // change Language 
-languageIcon.addEventListener('click', function change() {
+
+languageIcon.addEventListener('click', function changeLangueage() {
   if (layoutLanguage === 'ENG') {
 
    layoutLanguage = 'RUS';
@@ -164,13 +173,47 @@ languageIcon.addEventListener('click', function change() {
  
    }
    console.log(layoutLanguage);
+   let keys = document.querySelectorAll('.key')
 
- let keys = document.querySelectorAll('.key')
-  keyboardLines.forEach(el => keyboardContainer.removeChild(el))
-  createLIne ()
+   keyboardLines.forEach(el => keyboardContainer.removeChild(el))
+   createLine ()
+      let newKey = document.createElement('div');
+      newKey.classList.add('key')
+       keyboardLines  = document.querySelectorAll(".keyboard-line")
+      keyboardLines[1].classList.add('red')
+      function initKeys (start , end , line) {
+        let curArray = (layoutLanguage == 'rys') ? layout : Rus_layout;
+        for (let i = start; i < end; i++) {
+          let newKey = document.createElement('div');
+          newKey.classList.add('key')
+           if ( bigKeys.includes(curArray[i]) ) {
+            newKey.classList.add('key-big') 
+           }
+           if (layout[i] === ' ' ) {
+            newKey.classList.add('key-big2') 
+           }
+           if ( anotherColorKeys.includes(curArray[i]) ) {
+            newKey.classList.add('key-another-color') 
+           }
+           newKey.textContent =`${curArray[i]}`;
+           keyboardLines[line].appendChild(newKey)
+        }
+      }
+       
+      
+       //инициализация клавиатуры
+       
+      initKeys (0,14 , 0)
+      initKeys (14,29 , 1)
+      initKeys (29,42, 2)
+      initKeys (42,56 , 3)
+      initKeys (56, 64, 4)
+
 }
-
 )
 
 
 
+
+
+  
