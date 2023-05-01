@@ -1,0 +1,119 @@
+.body {
+  height:50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(81, 81, 81);
+}
+
+h1 {
+  font-size: 4rem;;
+  margin-top:14rem;
+  color:rgb(30, 30, 28);
+}
+
+.key { 
+  width:3.5rem;
+  height:3rem;
+  margin: 0 0.4rem;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  color:rgb(216, 216, 216);
+  font-weight: 400;
+  font-size: 1.3rem;
+  border-radius: 0.4rem; 
+  border: 2px solid rgb(121, 123, 122);
+  background-color: black;
+  transition: background-color 0.2s rotate 1s;
+  text-align: center;
+  font-family:'Courier New', Courier, monospace;
+}
+
+.key-big {
+  width:8rem;
+}
+.key-big2 {
+  width:36rem;
+}
+
+.key-another-color {
+  background-color: rgb(37, 37, 37);
+}
+.key-animation {
+  transform: scale(0.95);
+  border-radius: 40%;
+}
+
+/* .key:hover{
+  background-color: black;
+
+
+} */
+
+
+.keyboard-container {
+  background-color: rgba(0, 0, 0, 0.404) ;
+  padding: 1.5rem;
+  border-radius: 2.4rem;
+
+}
+.field__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:72rem;
+  padding: 2rem;;
+  background-color: rgb(81, 81, 81);
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+textarea {
+  margin-bottom: 2.6rem;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.keyboard-line {
+ background-color: rgba(211, 223, 33, 0.404) ;
+  width: 70rem;
+  height:4.8rem;
+  display: flex;
+  padding:  0 0rem ;
+}
+
+.keyboard-line {
+  background-color: rgb(125, 125, 8) !important;
+}
+
+.keyboard__area {
+  width:40rem;
+  height:7rem;
+}
+
+.advice {
+  margin-top: 2.5rem;
+  color:rgba(255, 244, 244, 0.693);
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.404) ;
+  padding: 2rem;
+  border-radius: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.language {
+position: relative;
+margin-top: -7rem;
+margin-left: 65rem;
+width: 4rem;
+height: 4rem;
+
+
+
+background-image: url('/bristish.png');
+}
