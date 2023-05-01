@@ -99,3 +99,78 @@ initKeys (29,42, 2)
 initKeys (42,56 , 3)
 initKeys (56, 63, 4)
 
+
+let keyboardLine  = document.querySelector('.keyboard-line');
+
+
+//keyboard highlight
+fieldContainer.addEventListener('click', function getGray(e) {
+  if (e.target.classList.contains('key')) {
+    let target = e.target
+    target.style.backgroundColor = "gray";
+    if (target.classList.contains('key')) {
+      target.classList.add('key-animation')
+    }
+    setTimeout(function getOriginalColor(e){
+      if (target.classList.contains('.key-another-color')) {
+        target.classList
+      }
+    target.style.backgroundColor = "rgb(19, 19, 19)";
+    target.classList.remove('key-animation')
+    }, 300 )
+   if (target.textContent === 'Backspace') {
+    textArea.textContent = (textArea.textContent).slice(0, -1)
+   } else {
+    
+    textArea.textContent += target.textContent
+   }
+  }
+}
+)
+
+// определяем название кликнутой клавиши 
+fieldContainer.addEventListener('click', function getName(e) {
+  if (e.target.classList.contains('key')) {
+    console.log(e.target.textContent)
+  }  
+})
+
+//запись в текстареа, того, что набрано клавишами
+document.addEventListener('keydown', function getKek(e) {
+  console.log(e.key)
+  textArea.textContent += e.key
+  let keys  = document.querySelectorAll('.key')
+  keys.forEach(el => {
+   if(el.textContent == e.key.toUpperCase()) {
+    el.style.backgroundColor = 'gray'
+    
+    setTimeout(() => {
+      el.style.backgroundColor = 'black';
+    }, 400)
+   }
+  })
+ 
+})
+
+
+
+// change Language 
+languageIcon.addEventListener('click', function change() {
+  if (layoutLanguage === 'ENG') {
+
+   layoutLanguage = 'RUS';
+   } else { 
+      layoutLanguage = 'ENG';
+ 
+   }
+   console.log(layoutLanguage);
+
+ let keys = document.querySelectorAll('.key')
+  keyboardLines.forEach(el => keyboardContainer.removeChild(el))
+  createLIne ()
+}
+
+)
+
+
+
