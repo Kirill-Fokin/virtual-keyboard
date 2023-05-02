@@ -76,7 +76,7 @@ textarea {
 }
 
 .keyboard-line {
- background-color: rgba(211, 223, 33, 0.404) ;
+  background-color: rgba(211, 223, 33, 0.404) ;
   width: 70rem;
   height:4.8rem;
   display: flex;
