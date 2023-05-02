@@ -1,3 +1,4 @@
+alert('Добрый день, если будет возможность, отложите, пожалуйста проверку на последний день, хотел доделать некоторые баги, если же нет, то большая чать доступна сейчас деплой от 2 мая, удачи ! по любым вопросам пишите в чат RS либо Discord ');
 let layout = ["`","1","2","3","4","5","6","7","8","9","0","-", "=", "Backspace",
             "Tab","Q","W","E","R","T","Y","U","I","O","P","[","]","line","DEL",
             "Caps Lock","A","S","D","F","G","H","J","K","L",";","'","ENTER",
@@ -64,7 +65,6 @@ let adviceBlock2 =   document.createElement('div');
 adviceBlock2.classList.add('advice')
 adviceBlock2.textContent = 'клавитура сделана на MacOS'
 fieldContainer.appendChild(adviceBlock2);
-
 let keyboardLines  = document.querySelectorAll(".keyboard-line")
 //key creation
 
