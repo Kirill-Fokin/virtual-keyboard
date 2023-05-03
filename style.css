@@ -32,15 +32,26 @@ h1 {
   font-family:'Courier New', Courier, monospace;
 }
 
+
+.gray {
+  background-color: gray !important;
+}
+
+
+
+
 .key-big {
   width:8rem;
+  font-size: 1rem;
 }
 
 .key-big2 {
   width:36rem;
+  font-size: 1rem;
 }
 
 .key-another-color {
+  font-size: 1rem;
   background-color: rgb(46, 46, 46);
 }
 
@@ -76,6 +87,7 @@ textarea {
 }
 
 .keyboard-line {
+  
   background-color: rgba(211, 223, 33, 0.404) ;
   width: 70rem;
   height:4.8rem;
