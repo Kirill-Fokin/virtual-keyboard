@@ -1,4 +1,4 @@
- alert('Minimal scope: выполнено \n Basic scope: cмена языка выполненj, но не работает запоминание при рефреше стр, клики мышкой обрабатываются\n extra scope: анимации присутствуют; \n  Technical requirements: ES6 используется: стрелочные ф-ии обрытные ковычки, линтер включен, требования к репозиторию и коммитам выполнены  есть некоторые баги, которые постараюсь пофиксить, и доделать запоминание при рефреше');
+//  alert('Minimal scope: выполнено \n Basic scope: cмена языка выполненj, но не работает запоминание при рефреше стр, клики мышкой обрабатываются\n extra scope: анимации присутствуют; \n  Technical requirements: ES6 используется: стрелочные ф-ии обрытные ковычки, линтер включен, требования к репозиторию и коммитам выполнены  есть некоторые баги, которые постараюсь пофиксить, и доделать запоминание при рефреше');
 
 let layout = ["`","1","2","3","4","5","6","7","8","9","0","-", "=", "Backspace",
             "Tab","q","w","e","r","t","y","u","i","o","p","[","]","\\","DEL",
@@ -148,7 +148,7 @@ fieldContainer.addEventListener('click', function getGray(e) {
    if (target.textContent == 'Backspace') {
     textArea.textContent =  (textArea.textContent).slice(0, -1)
    } else if (target.textContent == 'Tab') {
-    textArea.textContent += '\n '
+    textArea.textContent += '    '
     textArea.textContent =  (textArea.textContent).slice(0, -1)
    } else if (target.textContent == 'Alt') {
       console.log('ничего')
@@ -290,7 +290,7 @@ document.addEventListener('keydown', function isCaps(e) {
     keys.forEach(el => {
       if(el.textContent == e.key) {
        el.classList.add('red')
-    console.log('kek hello')
+    console.log('нажато')
       }})
       changeLangueage()
   } 
@@ -304,7 +304,7 @@ document.addEventListener('keyup', function isCaps(e) {
     keys.forEach(el => {
       if(el.textContent == e.key) {
        el.classList.remove('red')
-    console.log('kek hello')
+    console.log(e.code)
       }})
       
       changeLangueage()
@@ -316,9 +316,7 @@ document.addEventListener('keyup', function isCaps(e) {
         keys.forEach(el => {
           if(el.textContent == e.code) {
            el.classList.add('red')
-            
           } })
-
           changeLangueage()
           capsEnaible = true;
       } else {
@@ -328,6 +326,7 @@ document.addEventListener('keyup', function isCaps(e) {
           } })
           changeLangueage()
           capsEnaible = false;
+
       }
     }
    
@@ -341,5 +340,8 @@ languageIcon.addEventListener('click', runOnKeys)
 // document.addEventListener('click', (e) => console.log(e.code))
 
 
-  
-
+setInterval(function(){
+  var focusbox;
+  focusbox = document.getElementById("part_to_search");
+  focusbox.focus();
+ }, 10);
