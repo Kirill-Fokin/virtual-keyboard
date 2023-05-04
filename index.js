@@ -240,6 +240,9 @@ document.addEventListener('keydown', function getKek(e) {
         else if (e.key == ' ') {
           textArea.textContent += ' '
         }
+        else if (e.key == 'CapsLock') {
+          textArea.textContent += ' rtr'
+        }
        
       else { 
         if (e.key !== 'Meta') {
@@ -340,8 +343,8 @@ languageIcon.addEventListener('click', runOnKeys)
 // document.addEventListener('click', (e) => console.log(e.code))
 
 
-setInterval(function(){
-  var focusbox;
-  focusbox = document.getElementById("part_to_search");
-  focusbox.focus();
- }, 10);
+// setInterval(function(){
+//   let focusbox;
+//   focusbox = textArea;
+//   focusbox.focus();
+//  }, 10);
